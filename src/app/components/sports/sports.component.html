@@ -1,0 +1,3 @@
+<div *ngFor="let article of articles" class="col-md-12">
+  <app-detail-article (voteEmitter)="voteDashboard($event)" [article]="article"></app-detail-article>
+</div>

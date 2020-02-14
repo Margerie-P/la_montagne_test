@@ -1,0 +1,25 @@
+{
+  "article": [
+    {
+      "titre": "L'asm à gagné",
+      "contenu": "Champion du monde ",
+      "image": "/assets/amg/asm.png",
+      "dateCreate": "02/05/2019",
+      "id": 1
+    },
+    {
+      "titre": "Encore une victoire oulalal",
+      "contenu": "Champion du monde ",
+      "image": "/assets/amg/asm.png",
+      "dateCreate": "02/05/2019",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "titre": "trop mignon",
+      "image": "https://cdn.futura-sciences.com/buildsv6/images/wide1920/1/9/5/1952930a3e_103193_phoque-otarie-difference-bebe-phoque.jpg",
+      "contenu": "il ets trop chou",
+      "dateCreate": null
+    }
+  ]
+}

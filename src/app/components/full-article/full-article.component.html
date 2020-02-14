@@ -1,0 +1,34 @@
+<a routerLink="/home"><button class="btn-success">Revenir à la l'accueil</button></a>
+
+<ng-container *ngIf="!isLoading">
+  <div *ngIf="article">
+<h1>Affichage de {{ article.titre }}</h1>
+<div class="border-1" >
+  Article Component !!!<br>
+  <h1>{{ article.titre|uppercase }}</h1>
+  <p>{{article.contenu}}</p>
+
+<div class="row">
+  <div class="col-md-4">
+    <img src="{{ article.image }}">
+  </div>
+  <div class="col-md-6">
+    {{ article.contenu| titlecase | toto }}
+  </div>
+</div>
+<input (click)="voteDetailArticle()"  class="btn btn-success" value="Voter pour cet article">
+</div>
+
+</div>
+<div *ngIf="!article">
+  Cet article n'existe pas
+</div>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+  <fa-icon [spin]="true" [icon]="faSpinner"></fa-icon>
+</ng-container>
+
+
+
+<button (click)="redirectHome()">Aller à l'accueil</button>

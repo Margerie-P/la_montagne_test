@@ -1,0 +1,45 @@
+<div class="border-1">
+  Dashboard Component !!!<br>
+  <h1>{{ nbClick }} personnes ont votés</h1>
+<div [ngSwitch]="favoriTeam" class="col-md-12">
+  <div class="row">
+  <div class="col-md-6">
+  <h2>Mon équipe favorite</h2>
+
+  <img *ngSwitchCase="'ASM'"
+       src="https://upload.wikimedia.org/wikipedia/fr/a/a8/Logo_ASM_Clermont_Auvergne_2019.svg">
+
+  <img *ngSwitchCase="'RCT'"
+       src="https://jardinage.lemonde.fr/images/dossiers/2018-01/chevre-1-074448.jpg">
+
+  <img *ngSwitchCase="'USAP'"
+       src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/77/Logo_USA_Perpignan_2017.svg/1200px-Logo_USA_Perpignan_2017.svg.png">
+  <p *ngSwitchDefault>Je ne supporte personne</p>
+  </div>
+  <div class="col-md-6">
+    <h2>Le classement</h2>
+    <ol>
+      <li *ngFor="let team of classement">{{ team }}</li>
+    </ol>
+  </div>
+  </div>
+
+  <!--
+  La variable is loading nous permet d'afficher les resultats seulement quand le serveur à fini
+  la requete -->
+  <ng-container *ngIf="!isLoading">
+  <div *ngFor="let article of articles" class="col-md-12">
+    <app-detail-article (voteEmitter)="voteDashboard($event)" [article]="article"></app-detail-article>
+  </div>
+  </ng-container>
+
+
+  <ng-container *ngIf="isLoading">
+    <fa-icon [spin]="true" [icon]="faSpinner"></fa-icon>
+  </ng-container>
+</div>
+</div>
+
+
+
+
